@@ -2,6 +2,9 @@
 
 [![Built for WPForms](https://img.shields.io/badge/Built%20for-WPForms-%23e27730)](https://wpforms.com)
 
+| Visit the documentation and demos [here](https://awesomemotive.github.io/wpforms-multiselect-js)! |
+| --- |
+
 The "MultiSelect Checkbox" is a versatile vanilla JavaScript plugin designed to enhance the functionality of select dropdowns. This plugin transforms a regular select dropdown into a dynamic multi-select checkbox dropdown. With this plugin, users can select multiple options from a list by simply checking the corresponding checkboxes, providing a more intuitive and user-friendly interface.
 
 The plugin seamlessly replaces the default select dropdown with a customizable dropdown menu, enriched with checkboxes for each option. Users can select and deselect options with ease, allowing for more flexible and efficient data selection.
