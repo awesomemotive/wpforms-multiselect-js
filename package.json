@@ -13,13 +13,13 @@
 	"author": "WPForms",
 	"scripts": {
 		"format": "prettier --write \"**/*.{js,json}\"",
-		"lint:css": "stylelint src/css/*.css",
-		"lint:css:fix": "stylelint src/css/*.css --fix",
-		"lint:js": "eslint src/js/*.js",
-		"lint:js:fix": "eslint src/js/*.js --fix",
+		"lint:css": "stylelint src/*.css",
+		"lint:css:fix": "stylelint src/*.css --fix",
+		"lint:js": "eslint src/*.js",
+		"lint:js:fix": "eslint src/*.js --fix",
 		"minify": "cross-env BABEL_ENV=default NODE_ENV=production npm run minify:css && npm run minify:js",
-		"minify:css": "rimraf dist/wpforms-multiselect-checkboxes.css && cleancss --batch --batch-suffix '' src/css/wpforms-multiselect-checkboxes.css --output dist",
-		"minify:js": "rimraf dist/wpforms-multiselect-checkboxes.js && terser src/js/wpforms-multiselect-checkboxes.js -c booleans=true -c comparisons=true -m --module -o dist/wpforms-multiselect-checkboxes.js"
+		"minify:css": "rimraf dist/wpforms-multiselect-checkboxes.css && cleancss --batch --batch-suffix '' src/wpforms-multiselect-checkboxes.css --output dist",
+		"minify:js": "rimraf dist/wpforms-multiselect-checkboxes.js && terser src/wpforms-multiselect-checkboxes.js -c booleans=true -c comparisons=true -m --module -o dist/wpforms-multiselect-checkboxes.js"
 	},
 	"devDependencies": {
 		"@wordpress/eslint-plugin": "13.6.0",
