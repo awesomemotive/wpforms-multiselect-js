@@ -1,0 +1,36 @@
+{
+	"name": "@wpforms/multiselect-checkbox",
+	"version": "1.0.0",
+	"private": true,
+	"description": "A vanilla JavaScript plugin for creating multiple select checkboxes.",
+	"bugs": {
+		"url": "https://github.com/awesomemotive/wpforms-multiselect-js/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/awesomemotive/wpforms-multiselect-js.git"
+	},
+	"author": "WPForms",
+	"scripts": {
+		"format": "prettier --write \"**/*.{js,json}\"",
+		"lint:css": "stylelint src/css/*.css",
+		"lint:css:fix": "stylelint src/css/*.css --fix",
+		"lint:js": "eslint src/js/*.js",
+		"lint:js:fix": "eslint src/js/*.js --fix",
+		"minify": "cross-env BABEL_ENV=default NODE_ENV=production npm run minify:css && npm run minify:js",
+		"minify:css": "rimraf dist/wpforms-multiselect-checkboxes.css && cleancss --batch --batch-suffix '' src/css/wpforms-multiselect-checkboxes.css --output dist",
+		"minify:js": "rimraf dist/wpforms-multiselect-checkboxes.js && terser src/js/wpforms-multiselect-checkboxes.js -c booleans=true -c comparisons=true -m --module -o dist/wpforms-multiselect-checkboxes.js"
+	},
+	"devDependencies": {
+		"@wordpress/eslint-plugin": "13.6.0",
+		"@wordpress/prettier-config": "2.5.0",
+		"@wordpress/stylelint-config": "21.5.0",
+		"clean-css-cli": "5.6.1",
+		"cross-env": "7.0.3",
+		"eslint": "8.27.0",
+		"prettier": "npm:wp-prettier@2.6.2",
+		"rimraf": "3.0.2",
+		"stylelint": "14.15.0",
+		"terser": "5.18.2"
+	}
+}
