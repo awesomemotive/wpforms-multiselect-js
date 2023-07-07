@@ -7,10 +7,12 @@
 	display: inline-flex;
 	flex-direction: column;
 	gap: 10px;
+	max-width: 100%;
 }
 
 .wpforms-multiselect-checkbox-wrapper {
 	position: relative;
+	max-width: 100%;
 }
 
 .wpforms-multiselect-checkbox-form-outline {
@@ -102,6 +104,12 @@
 .wpforms-multiselect-checkbox-input-mask:not(:empty) + .wpforms-multiselect-checkbox-input:not(:placeholder-shown),
 .wpforms-multiselect-checkbox-input::placeholder {
 	color: transparent;
+}
+
+.wpforms-multiselect-checkbox-input-placeholder {
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
 }
 
 .wpforms-multiselect-checkbox-input:not(:placeholder-shown) + .wpforms-multiselect-checkbox-input-placeholder {
