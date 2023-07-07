@@ -89,6 +89,10 @@ h3 {
 	font-size: 24px;
 }
 
+pre {
+	overflow: auto;
+}
+
 
 /**
  * Alignment
@@ -211,12 +215,16 @@ article h3 {
 .demo-box {
 	background: var(--light);
 	box-shadow: var(--shadow-small);
-	padding: 40px;
+	padding: clamp(20px, 3vw, 40px) clamp(10px, 3vw, 40px);
 	text-align: center;
 }
 
 .wpforms-multiselect-checkbox-dropdown {
 	vertical-align: middle;
+}
+
+.settings-table {
+	overflow-x: auto;
 }
 
 .widefat {
@@ -227,6 +235,7 @@ article h3 {
 	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
 	clear: both;
 	margin: 15px 0 0;
+	min-width: 600px;
 	table-layout: fixed;
 	width: 100%;
 }
