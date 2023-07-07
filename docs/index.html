@@ -162,15 +162,6 @@ instance.init();
 							if you select multiple options, the placeholder text will be <strong>Multiple</strong>. If
 							you select all options, the placeholder text will be <strong>All</strong>.
 						</p>
-						<p>
-							You have the flexibility to customize these placeholders by providing the
-							<strong>i18n</strong> setting when initializing the plugin constructor.
-						</p>
-						<br />
-						<p>
-							You can include <code>{count}</code> in the <code>multiple</code> text to represent the
-							number of selected options. It will be replaced with the actual count.
-						</p>
 						<pre data-language="javascript">
 const instance = new wpformsMultiSelectCheckbox('dropdown-id', {showMask:true});
 instance.init();
@@ -189,6 +180,46 @@ instance.init();
 								<option value="Beer Mug" selected>🍺 Beer Mug</option>
 								<option value="Tropical Drink" selected>🍹 Tropical Drink</option>
 								<option value="Teacup">🍵 Teacup</option>
+							</select>
+						</div>
+					</article>
+				</div>
+
+				<div class="row">
+					<article>
+						<h3>Localized Masked Input</h3>
+						<p>
+							You have the flexibility to customize these placeholders by providing the
+							<strong>i18n</strong> setting when initializing the plugin constructor.
+						</p>
+						<br />
+						<p>
+							You can include <code>{count}</code> in the <code>multiple</code> text to represent the
+							number of selected options. It will be replaced with the actual count.
+						</p>
+						<pre data-language="javascript">
+const instance = new wpformsMultiSelectCheckbox(
+  'dropdown-id',
+  {
+   showMask:true,
+   i18n:{
+	 multiple:'{count} bebidas seleccionadas',
+	 all:'Todas las bebidas seleccionadas'
+   }
+  }
+);
+instance.init();
+</pre>
+						<div class="demo-box">
+							<select class="dropdown" multiple placeholder="Selecciona tus bebidas"
+								data-settings='{"showClear":true,"showMask":true,"i18n":{"multiple":"{count} bebidas seleccionadas","all":"Todas las bebidas seleccionadas"}}'>
+								<option value="Mate">🧉 Mate</option>
+								<option value="Beverage Box" selected>🧃 Caja de bebidas</option>
+								<option value="Bubble Tea">🧋 Bubble Tea</option>
+								<option value="Hot Beverage">☕ Bebida caliente</option>
+								<option value="Beer Mug">🍺 Jarra de cerveza</option>
+								<option value="Tropical Drink" selected>🍹 Bebida tropical</option>
+								<option value="Teacup">🍵 Taza de té</option>
 							</select>
 						</div>
 					</article>
@@ -229,6 +260,12 @@ instance.init();
 					<article>
 						<h3>Show Tags</h3>
 						<p>Enabling tags will display selected options as tags.</p>
+						<br/>
+						<p>
+							You can also use the <strong>tagsPlacement</strong> setting to control where the tags are
+							displayed. The default value is <strong>top</strong>. You can use the following values:
+							<strong>top</strong>, <strong>bottom</strong>, <strong>left</strong>, <strong>right</strong>
+						</p>
 						<pre data-language="javascript">
 const instance = new wpformsMultiSelectCheckbox('dropdown-id', {showTags:true});
 instance.init();
@@ -398,15 +435,22 @@ instance.update(dropdown, valuesToSet);
 										</td>
 									</tr>
 									<tr>
+										<td>tagsPlacement</td>
+										<td>Where to display the tags.</td>
+										<td>
+											<pre data-language="html"> 'top', 'bottom', 'left', 'right'</pre>
+										</td>
+										</tr>
+										<tr>
 										<td>i18n</td>
 										<td>Object with translations.</td>
 										<td>
 										<pre data-language="javascript">
 {
-search: 'Search',
-clear: 'Clear',
-all: 'All',
-multiple: 'Multiple',
+ search: 'Search',
+ clear: 'Clear',
+ all: 'All',
+ multiple: 'Multiple',
 }
 </pre>
 										</td>
