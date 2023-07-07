@@ -1,58 +1,70 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>MultiSelect Checkbox Dropdown plugin | A JavaScript plugin for WPForms project</title>
 
-<head>
-	<meta charset="utf-8">
-	<title>MultiSelect Checkbox Dropdown plugin | A JavaScript plugin for WPForms project</title>
+		<!-- MOBILE -->
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-	<!-- MOBILE -->
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- FAVICON -->
+		<link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
 
-	<!-- FAVICON -->
-	<link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
+		<!-- STYLES -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=Arvo&family=Lato:wght@400;700&display=swap"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="https://cdn.jsdelivr.net/npm/normalize.css@latest/normalize.min.css"
+		/>
+		<link rel="stylesheet" type="text/css" href="assets/css/styles.css" />
+		<link rel="stylesheet" type="text/css" href="assets/css/wpforms-multiselect-checkboxes.css" />
+		<link rel="stylesheet" type="text/css" href="assets/css/vendor/github.css" />
+	</head>
 
-	<!-- STYLES -->
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Arvo&family=Lato:wght@400;700&display=swap">
-	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/normalize.css@latest/normalize.min.css" />
-	<link rel="stylesheet" type="text/css" href="assets/css/styles.css">
-	<link rel="stylesheet" type="text/css" href="assets/css/wpforms-multiselect-checkboxes.css">
-	<link rel="stylesheet" type="text/css" href="assets/css/vendor/github.css">
-</head>
+	<body>
+		<section class="container align-center has-tile-background">
+			<div class="group has-narrow-width has-small-gap has-medium-vertical-padding">
+				<img src="assets/img/icon.png" class="align-center" width="64" />
+				<h1>MultiSelect Checkbox</h1>
+				<p class="large-font-size">A vanilla JavaScript plugin for WPForms project</p>
+			</div>
+		</section>
 
-<body>
-	<section class="container align-center has-tile-background">
-		<div class="group has-narrow-width has-small-gap has-medium-vertical-padding">
-			<img src="assets/img/icon.png" class="align-center" width="64">
-			<h1>MultiSelect Checkbox</h1>
-			<p class="large-font-size">A vanilla JavaScript plugin for WPForms project</p>
-		</div>
-	</section>
-
-	<div class="container">
-		<div class="row">
-			<div class="twelve columns">
+		<div class="container">
+			<div class="row">
 				<div class="separator">Demonstration</div>
 			</div>
 		</div>
-	</div>
 
-	<section>
-		<div class="container">
-			<div class="row">
-				<div class="twelve columns">
+		<section>
+			<div class="container">
+				<div class="row">
 					<article>
 						<h3>Basic Usage</h3>
-						<p>The plugin instance can be created by passing the dropdown element to the constructor. The argument can be a DOM element ID or the DOM element itself. For example, you can use the following code:</p>
-						<p>The second argument is an optional object that can be used to pass additional settings to the plugin constructor. Alternatively, you can use the <strong>data-settings</strong> attribute on the dropdown element to pass the settings.</p>
+						<p>
+							The plugin instance can be created by passing the dropdown element to the constructor. The
+							argument can be a DOM element ID or the DOM element itself. For example, you can use the
+							following code:
+						</p>
+						<p>
+							The second argument is an optional object that can be used to pass additional settings to
+							the plugin constructor. Alternatively, you can use the
+							<strong>data-settings</strong> attribute on the dropdown element to pass the settings.
+						</p>
 						<pre data-language="javascript">
 const dropdown = document.querySelector('.dropdown');
 const instance = new wpformsMultiSelectCheckbox(dropdown);
 instance.init();
 </pre>
-<p>Alternatively, you can use the following code by passing the DOM element ID:</p>
-<pre data-language="javascript">
+						<p>Alternatively, you can use the following code by passing the DOM element ID:</p>
+						<pre data-language="javascript">
 const instance = new wpformsMultiSelectCheckbox('dropdown-id');
 instance.init();
 </pre>
@@ -66,14 +78,15 @@ instance.init();
 						</div>
 					</article>
 				</div>
-			</div>
 
-			<div class="row">
-				<div class="twelve columns">
+				<div class="row">
 					<article>
 						<h3>Disabled MultiSelect</h3>
-						<p>To disable the entire select input, you can add the disabled attribute to the <strong>select</strong> element. This attribute prevents
-							the user from interacting with the dropdown and selecting any options.</p>
+						<p>
+							To disable the entire select input, you can add the disabled attribute to the
+							<strong>select</strong> element. This attribute prevents the user from interacting with the
+							dropdown and selecting any options.
+						</p>
 						<pre data-language="html">
 <select multiple="true" disabled="true">
 	<option value="Option 1">Option 1</option>
@@ -90,13 +103,15 @@ instance.init();
 						</div>
 					</article>
 				</div>
-			</div>
 
-			<div class="row">
-				<div class="twelve columns">
+				<div class="row">
 					<article>
 						<h3>Disabled Options</h3>
-						<p>If you want to prevent a user from interacting with a checkbox option and changing its state, you can simply add the disabled attribute to the <strong>option</strong> element. This will disable the checkbox input.</p>
+						<p>
+							If you want to prevent a user from interacting with a checkbox option and changing its
+							state, you can simply add the disabled attribute to the <strong>option</strong> element.
+							This will disable the checkbox input.
+						</p>
 						<pre data-language="html">
 <select multiple="true">
 	<option value="Option 1" disabled="true">Option 1</option>
@@ -113,10 +128,8 @@ instance.init();
 						</div>
 					</article>
 				</div>
-			</div>
 
-			<div class="row">
-				<div class="twelve columns">
+				<div class="row">
 					<article>
 						<h3>Clear Button</h3>
 						<p>Clear button will display a button that will allow to clear current selections.</p>
@@ -125,7 +138,12 @@ const instance = new wpformsMultiSelectCheckbox('dropdown-id', {showClear:true})
 instance.init();
 </pre>
 						<div class="demo-box">
-							<select class="dropdown" multiple placeholder="Display a clear button" data-settings='{"showClear":true}'>
+							<select
+								class="dropdown"
+								multiple
+								placeholder="Display a clear button"
+								data-settings='{"showClear":true}'
+							>
 								<option value="Pizza">🍕 Pizza</option>
 								<option value="Hot Dog">🌭 Hot Dog</option>
 								<option value="Sandwich">🥪 Sandwich</option>
@@ -135,22 +153,35 @@ instance.init();
 						</div>
 					</article>
 				</div>
-			</div>
 
-			<div class="row">
-				<div class="twelve columns">
+				<div class="row">
 					<article>
 						<h3>Masked Input</h3>
-						<p>Masked input will display a placeholder text depending on the selected options. For example, if you select multiple options, the placeholder text will be <strong>Multiple</strong>. If you select all options, the placeholder text will be <strong>All</strong>.</p>
-						<p>You have the flexibility to customize these placeholders by providing the <strong>i18n</strong> setting when initializing the plugin constructor.</p>
-						<br/>
-						<p>You can include <code>{count}</code> in the <code>multiple</code> text to represent the number of selected options. It will be replaced with the actual count.</p>
+						<p>
+							Masked input will display a placeholder text depending on the selected options. For example,
+							if you select multiple options, the placeholder text will be <strong>Multiple</strong>. If
+							you select all options, the placeholder text will be <strong>All</strong>.
+						</p>
+						<p>
+							You have the flexibility to customize these placeholders by providing the
+							<strong>i18n</strong> setting when initializing the plugin constructor.
+						</p>
+						<br />
+						<p>
+							You can include <code>{count}</code> in the <code>multiple</code> text to represent the
+							number of selected options. It will be replaced with the actual count.
+						</p>
 						<pre data-language="javascript">
 const instance = new wpformsMultiSelectCheckbox('dropdown-id', {showMask:true});
 instance.init();
 </pre>
 						<div class="demo-box">
-							<select class="dropdown" multiple placeholder="Select your drinks" data-settings='{"showClear":true,"showMask":true,"i18n":{"multiple":"Multiple drinks selected","all":"All drinks selected"}}'>
+							<select
+								class="dropdown"
+								multiple
+								placeholder="Select your drinks"
+								data-settings='{"showClear":true,"showMask":true,"i18n":{"multiple":"Multiple drinks selected","all":"All drinks selected"}}'
+							>
 								<option value="Mate">🧉 Mate</option>
 								<option value="Beverage Box" selected>🧃 Beverage Box</option>
 								<option value="Bubble Tea">🧋 Bubble Tea</option>
@@ -162,10 +193,8 @@ instance.init();
 						</div>
 					</article>
 				</div>
-			</div>
 
-			<div class="row">
-				<div class="twelve columns">
+				<div class="row">
 					<article>
 						<h3>Search Enabled</h3>
 						<p>Search will display a search input that will allow to filter the options.</p>
@@ -174,7 +203,12 @@ const instance = new wpformsMultiSelectCheckbox('dropdown-id', {showSearch:true}
 instance.init();
 </pre>
 						<div class="demo-box">
-							<select class="dropdown" multiple placeholder="Search for different fruits" data-settings='{"showSearch":true,"showClear":true}'>
+							<select
+								class="dropdown"
+								multiple
+								placeholder="Search for different fruits"
+								data-settings='{"showSearch":true,"showClear":true}'
+							>
 								// Create 10 items with emoji friuts
 								<option value="Apple">🍎 Apple</option>
 								<option value="Banana">🍌 Banana</option>
@@ -190,10 +224,8 @@ instance.init();
 						</div>
 					</article>
 				</div>
-			</div>
 
-			<div class="row">
-				<div class="twelve columns">
+				<div class="row">
 					<article>
 						<h3>Show Tags</h3>
 						<p>Enabling tags will display selected options as tags.</p>
@@ -202,7 +234,12 @@ const instance = new wpformsMultiSelectCheckbox('dropdown-id', {showTags:true});
 instance.init();
 </pre>
 						<div class="demo-box">
-							<select class="dropdown" multiple placeholder="Show selected options as tags" data-settings='{"showTags":true}'>
+							<select
+								class="dropdown"
+								multiple
+								placeholder="Show selected options as tags"
+								data-settings='{"showTags":true}'
+							>
 								<option value="Option 1">Option 1</option>
 								<option value="Option 2">Option 2</option>
 								<option value="Option 3">Option 3</option>
@@ -212,31 +249,35 @@ instance.init();
 					</article>
 				</div>
 			</div>
-		</div>
-	</section>
+		</section>
 
-	<div class="container">
-		<div class="row">
-			<div class="twelve columns">
+		<div class="container">
+			<div class="row">
 				<div class="separator">Custom Events</div>
 			</div>
 		</div>
-	</div>
 
-	<section>
-		<div class="container">
-			<div class="row">
-				<div class="twelve columns">
+		<section>
+			<div class="container">
+				<div class="row">
 					<article>
 						<h3>Change Handler</h3>
-						<p>To observe the logged events in your browser console, toggle the checkboxes and monitor the corresponding output.</p>
+						<p>
+							To observe the logged events in your browser console, toggle the checkboxes and monitor the
+							corresponding output.
+						</p>
 						<pre data-language="javascript">
 dropdown.addEventListener('wpforms_multiselect_checkbox_changed', (event) => {
-	console.log('Selected options changed:', event.detail.selectedOptions);
+console.log('Selected options changed:', event.detail.selectedOptions);
 });
 </pre>
 						<div class="demo-box">
-							<select class="dropdown has-onchange-event" multiple placeholder="Subscribe to change event" data-settings='{"showTags":true}'>
+							<select
+								class="dropdown has-onchange-event"
+								multiple
+								placeholder="Subscribe to change event"
+								data-settings='{"showTags":true}'
+							>
 								<option value="Option 1">Option 1</option>
 								<option value="Option 2">Option 2</option>
 								<option value="Option 3">Option 3</option>
@@ -245,20 +286,26 @@ dropdown.addEventListener('wpforms_multiselect_checkbox_changed', (event) => {
 						</div>
 					</article>
 				</div>
-			</div>
 
-			<div class="row">
-				<div class="twelve columns">
+				<div class="row">
 					<article>
 						<h3>Remove Handler</h3>
-						<p>To view the logged events in your browser console, click on the "x" icon within the tags to remove selected options. Monitor the console output for corresponding events.</p>
+						<p>
+							To view the logged events in your browser console, click on the "x" icon within the tags to
+							remove selected options. Monitor the console output for corresponding events.
+						</p>
 						<pre data-language="javascript">
 dropdown.addEventListener('wpforms_multiselect_checkbox_removed', (event) => {
-	console.log('Option removed:', event.detail.removedOption);
+console.log('Option removed:', event.detail.removedOption);
 });
 </pre>
 						<div class="demo-box">
-							<select class="dropdown has-onremove-event" multiple placeholder="Subscribe to remove event" data-settings='{"showTags":true}'>
+							<select
+								class="dropdown has-onremove-event"
+								multiple
+								placeholder="Subscribe to remove event"
+								data-settings='{"showTags":true}'
+							>
 								<option value="Option 1" selected>Option 1</option>
 								<option value="Option 2" selected>Option 2</option>
 								<option value="Option 3" selected>Option 3</option>
@@ -268,126 +315,120 @@ dropdown.addEventListener('wpforms_multiselect_checkbox_removed', (event) => {
 					</article>
 				</div>
 			</div>
-		</div>
-	</section>
+		</section>
 
-	<div class="container">
-		<div class="row">
-			<div class="twelve columns">
+		<div class="container">
+			<div class="row">
 				<div class="separator">Public Api</div>
 			</div>
 		</div>
-	</div>
 
-	<section>
-		<div class="container">
-			<div class="row">
-				<div class="twelve columns">
+		<section>
+			<div class="container">
+				<div class="row">
 					<article>
 						<h3>Update</h3>
-						<p>The update function of the plugin allows you to programmatically set the selected options in the
-						dropdown. Simply provide the dropdown element and an array of values you want to set as selected options. For example,
-						you can use the following code:</p>
+						<p>
+							The update function of the plugin allows you to programmatically set the selected options in
+							the dropdown. Simply provide the dropdown element and an array of values you want to set as
+							selected options. For example, you can use the following code:
+						</p>
 						<pre data-language="javascript">
 const valuesToSet = ['Option 1', 'Option 3'];
 instance.update(dropdown, valuesToSet);
 </pre>
 						<div class="demo-box">
-							<select class="dropdown has-update-api" multiple placeholder="Pre-select options via API" data-settings='{"showTags":true}'>
-									<option value="Option 1">Option 1</option>
-									<option value="Option 2">Option 2</option>
-									<option value="Option 3">Option 3</option>
-									<option value="Option 4">Option 4</option>
+							<select
+								class="dropdown has-update-api"
+								multiple
+								placeholder="Pre-select options via API"
+								data-settings='{"showTags":true}'
+							>
+								<option value="Option 1">Option 1</option>
+								<option value="Option 2">Option 2</option>
+								<option value="Option 3">Option 3</option>
+								<option value="Option 4">Option 4</option>
 							</select>
 						</div>
 					</article>
 				</div>
 			</div>
-		</div>
-	</section>
+		</section>
 
-	<div class="container">
-		<div class="row">
-			<div class="twelve columns">
+		<div class="container">
+			<div class="row">
 				<div class="separator">Settings</div>
 			</div>
 		</div>
-	</div>
 
-	<section>
-		<div class="container">
-			<div class="row">
-				<div class="twelve columns">
+		<section>
+			<div class="container">
+				<div class="row">
 					<article>
 						<p>The following settings can be passed to the plugin constructor:</p>
-						<table class="widefat">
-							<thead>
-								<tr>
-									<th>Setting</th>
-									<th>Description</th>
-									<th>Default</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>showClear</td>
-									<td>Display a button that will allow to clear current selections.</td>
-									<td>
-										<pre data-language="javascript">false</pre>
-									</td>
-								</tr>
-								<tr>
-									<td>showSearch</td>
-									<td>Display a search input that will allow to filter the options.</td>
-									<td>
-										<pre data-language="javascript">false</pre>
-									</td>
-								</tr>
-								<tr>
-									<td>showTags</td>
-									<td>Display selected options as tags.</td>
-									<td>
-										<pre data-language="javascript">false</pre>
-									</td>
-								</tr>
-								<tr>
-									<td>i18n</td>
-									<td>Object with translations.</td>
-									<td>
-<pre data-language="javascript">
+						<div class="settings-table">
+							<table class="widefat">
+								<thead>
+									<tr>
+										<th>Setting</th>
+										<th>Description</th>
+										<th>Default</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>showClear</td>
+										<td>Display a button that will allow to clear current selections.</td>
+										<td>
+											<pre data-language="javascript">false</pre>
+										</td>
+									</tr>
+									<tr>
+										<td>showSearch</td>
+										<td>Display a search input that will allow to filter the options.</td>
+										<td>
+											<pre data-language="javascript">false</pre>
+										</td>
+									</tr>
+									<tr>
+										<td>showTags</td>
+										<td>Display selected options as tags.</td>
+										<td>
+											<pre data-language="javascript">false</pre>
+										</td>
+									</tr>
+									<tr>
+										<td>i18n</td>
+										<td>Object with translations.</td>
+										<td>
+										<pre data-language="javascript">
 {
-  search: 'Search',
-  clear: 'Clear',
-  all: 'All',
-  multiple: 'Multiple',
+search: 'Search',
+clear: 'Clear',
+all: 'All',
+multiple: 'Multiple',
 }
 </pre>
-									</td>
-								</tr>
-							</tbody>
-						</table>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
 					</article>
 				</div>
 			</div>
-		</div>
-	</section>
+		</section>
 
-	<footer>
-		<div class="container">
-			<div class="row">
-				<div class="twelve columns">
-					Built for <a href="https://wpforms.com">WPForms</a>
-				</div>
+		<footer>
+			<div class="container">
+				<div class="row">Built for <a href="https://wpforms.com">WPForms</a></div>
 			</div>
-		</div>
-	</footer>
+		</footer>
 
-	<!-- JS -->
-	<script type="text/javascript" src="assets/js/vendor/rainbow-custom.min.js"></script>
-	<script type="text/javascript" src="assets/js/wpforms-multiselect-checkboxes.js"></script>
-	<script type="text/javascript" src="assets/js/initializers.js"></script>
-	<!-- JS ends -->
-
-</body>
-
+		<!-- JS -->
+		<script type="text/javascript" src="assets/js/vendor/rainbow-custom.min.js"></script>
+		<script type="text/javascript" src="assets/js/wpforms-multiselect-checkboxes.js"></script>
+		<script type="text/javascript" src="assets/js/initializers.js"></script>
+		<!-- JS ends -->
+	</body>
 </html>
