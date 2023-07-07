@@ -18,6 +18,7 @@
 		"lint:js": "eslint src/*.js",
 		"lint:js:fix": "eslint src/*.js --fix",
 		"minify": "cross-env BABEL_ENV=default NODE_ENV=production npm run minify:css && npm run minify:js",
+		"minify:docs": "npm run minify && cpy dist/wpforms-multiselect-checkboxes.js docs/assets/js/ --flat && cpy dist/wpforms-multiselect-checkboxes.css docs/assets/css/ --flat",
 		"minify:css": "rimraf dist/wpforms-multiselect-checkboxes.css && cleancss --batch --batch-suffix '' src/wpforms-multiselect-checkboxes.css --output dist",
 		"minify:js": "rimraf dist/wpforms-multiselect-checkboxes.js && terser src/wpforms-multiselect-checkboxes.js -c booleans=true -c comparisons=true -m --module -o dist/wpforms-multiselect-checkboxes.js"
 	},
@@ -26,6 +27,7 @@
 		"@wordpress/prettier-config": "2.5.0",
 		"@wordpress/stylelint-config": "21.5.0",
 		"clean-css-cli": "5.6.1",
+		"cpy-cli": "5.0.0",
 		"cross-env": "7.0.3",
 		"eslint": "8.27.0",
 		"prettier": "npm:wp-prettier@2.6.2",
