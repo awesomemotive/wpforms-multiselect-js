@@ -5,9 +5,14 @@
 .wpforms-multiselect-checkbox-dropdown {
 	align-items: center;
 	display: inline-flex;
-	flex-direction: column;
+	flex-wrap: wrap;
 	gap: 10px;
 	max-width: 100%;
+}
+
+.wpforms-multiselect-checkbox-dropdown.has-tags-top,
+.wpforms-multiselect-checkbox-dropdown.has-tags-bottom {
+	flex-direction: column;
 }
 
 .wpforms-multiselect-checkbox-wrapper {
@@ -202,6 +207,10 @@
 	display: flex;
 	flex-wrap: wrap;
 	gap: 3px;
+}
+
+.has-tags-top > .wpforms-multiselect-checkbox-selected,
+.has-tags-left > .wpforms-multiselect-checkbox-selected {
 	order: -1;
 }
 

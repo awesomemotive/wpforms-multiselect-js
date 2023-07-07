@@ -29,9 +29,11 @@
 			showClear: false,
 			// Default setting to show mask.
 			showMask: false,
+			// Default setting for the position of the selected options.
+			tagsPlacement: 'top',
 			// Default delimiter for the input value.
 			// This is an undocumented option which might not often be used, but it's here for convenience.
-			delimiter: ',',
+			delimiter: ', ',
 		};
 
 		// Default i18n strings.
@@ -133,6 +135,15 @@
 					throw new PluginError( 'The "showClear" property must be a boolean value.' );
 				}
 
+				if (
+					typeof this.settings.tagsPlacement !== 'string' ||
+					! [ 'top', 'bottom', 'left', 'right' ].includes( this.settings.tagsPlacement )
+				) {
+					throw new PluginError(
+						'The "tagsPlacement" property must be a string value and one of the following: top, bottom, left, right.'
+					);
+				}
+
 				// Build the plugin.
 				build.call( this, element );
 			} catch ( error ) {
@@ -224,7 +235,7 @@
 		element.style.display = 'none';
 
 		// Get the plugin settings
-		const { showSearch, showTags, showClear, showMask, delimiter } = this.settings;
+		const { showSearch, showTags, showClear, showMask, tagsPlacement, delimiter } = this.settings;
 
 		// Wrap the select field.
 		this.wrapper.classList.add( 'wpforms-multiselect-checkbox-dropdown' );
@@ -312,6 +323,7 @@
 		if ( showTags ) {
 			this.selectedOptionsContainer = document.createElement( 'div' );
 			this.selectedOptionsContainer.classList.add( 'wpforms-multiselect-checkbox-selected' );
+			this.wrapper.classList.add( `has-tags-${ tagsPlacement }` );
 			this.wrapper.appendChild( this.selectedOptionsContainer );
 		}
 
