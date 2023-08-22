@@ -1,12 +1,12 @@
 /* eslint-disable no-console */
-/* global wpformsMultiSelectCheckbox */
+/* global WPFormsMultiSelectCheckbox */
 
 // Call the initialization function when the DOM is ready
 function initializeDropdownCheckboxes() {
 	const dropdowns = document.querySelectorAll( '.dropdown' );
 
 	dropdowns.forEach( ( dropdown ) => {
-		const multiSelectCheckbox = new wpformsMultiSelectCheckbox( dropdown );
+		const multiSelectCheckbox = new WPFormsMultiSelectCheckbox( dropdown );
 		multiSelectCheckbox.init();
 
 		// Example of how to listen for the onchange event
