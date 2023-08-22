@@ -1,7 +1,7 @@
 /* global define, HTMLSelectElement, CustomEvent */
 
 ( function ( root, factory ) {
-	const pluginName = 'wpformsMultiSelectCheckbox';
+	const pluginName = 'WPFormsMultiSelectCheckbox';
 
 	if ( typeof define === 'function' && define.amd ) {
 		define( [], factory( pluginName ) );
@@ -417,11 +417,11 @@
 
 			// Update the mask text.
 			if ( showMask ) {
-				if ( selectedOptions.length === checkboxes.length ) {
+				if ( selectedOptions.length === checkboxes.length && checkboxes.length > 1 ) {
 					placeholder.textContent = '';
 					this.mask.textContent = this.i18n.all;
 				} else if ( selectedOptions.length === 0 || selectedOptions.length === 1 ) {
-					this.mask.textContent = '';
+					this.mask.textContent = getLabelFromOption( selectedOptions[ 0 ] );
 					placeholder.textContent = placeholderText;
 				} else {
 					placeholder.textContent = '';
@@ -440,6 +440,12 @@
 				detail: { selectedOptions },
 			} );
 			element.dispatchEvent( changeEvent );
+		};
+
+		// Get the label from the option value.
+		const getLabelFromOption = ( value ) => {
+			const option = Array.from( element.options ).find( ( _option ) => _option.value === value );
+			return option ? option.textContent.trim() : '';
 		};
 
 		// Remove an item from the selected options.
