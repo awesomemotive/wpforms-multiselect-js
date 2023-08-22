@@ -18,6 +18,7 @@
 .wpforms-multiselect-checkbox-wrapper {
 	position: relative;
 	max-width: 100%;
+	width: 100%;
 }
 
 .wpforms-multiselect-checkbox-form-outline {
@@ -25,13 +26,15 @@
 	background: #fff;
 	border: 1px solid #8c8f94;
 	border-radius: 3px;
+	box-sizing: border-box;
 	color: #3c434a;
 	display: flex;
 	font-size: 14px;
 	height: 30px;
 	line-height: 17px;
-	min-width: 120px;
-	padding: 0 27px 0 10px;
+	min-width: 126px;
+	padding-block: 0;
+	padding-inline: 10px 25px;
 }
 
 .wpforms-multiselect-checkbox-form-outline:focus,
@@ -42,7 +45,7 @@
 }
 
 .wpforms-multiselect-checkbox-dropdown.has-clear .wpforms-multiselect-checkbox-form-outline {
-	padding-right: 42px;
+	padding-inline-end: 38px;
 }
 
 .wpforms-multiselect-checkbox-form-outline.disabled {
@@ -67,7 +70,7 @@
 	height: 8px;
 	margin-top: -3px;
 	position: absolute;
-	right: 12px;
+	inset-inline-end: 10px;
 	transform: rotate(45deg);
 	width: 8px;
 }
@@ -76,7 +79,7 @@
 	cursor: pointer;
 	font-size: 16px;
 	position: absolute;
-	right: 27px;
+	inset-inline-end: 25px;
 	z-index: 2;
 }
 
@@ -84,14 +87,14 @@
 	color: #d63638;
 }
 
-.wpforms-multiselect-checkbox-input {
+.wpforms-multiselect-checkbox-wrapper .wpforms-multiselect-checkbox-input {
 	background: transparent;
 	border: 0;
 	box-shadow: none;
 	color: inherit;
 	cursor: pointer;
 	height: 100%;
-	left: 0;
+	inset-inline-start: 0;
 	margin: 0;
 	outline: none;
 	padding: inherit;
@@ -118,7 +121,7 @@
 }
 
 .wpforms-multiselect-checkbox-input:not(:placeholder-shown) + .wpforms-multiselect-checkbox-input-placeholder {
-	visibility: hidden;
+	display: none;
 }
 
 /* Dropdown */
@@ -127,13 +130,15 @@
 	border-radius: 6px;
 	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
 	display: none;
-	left: 0;
+	inset-inline-start: 0;
 	margin-top: 9px;
+	max-width: 90vw;
+	min-width: 100%;
 	padding-block: 9px;
 	position: absolute;
-	text-align: left;
+	text-align: start;
 	top: 100%;
-	width: 100%;
+	width: max-content;
 	z-index: 30;
 }
 
@@ -164,10 +169,12 @@
 .wpforms-multiselect-checkbox-items {
 	display: flex;
 	flex-direction: column;
-	gap: 5px;
-	max-height: 200px;
+	gap: 7px;
+	max-height: 350px;
 	overflow-y: auto;
 	padding-inline: 9px;
+	font-size: 13px;
+	line-height: 16px;
 }
 
 .wpforms-multiselect-checkbox-items::-webkit-scrollbar {
@@ -183,6 +190,7 @@
 	cursor: pointer;
 	display: flex;
 	gap: 5px;
+	padding-block: 3px;
 }
 
 .wpforms-multiselect-checkbox-items label.disabled {
@@ -194,8 +202,17 @@
 }
 
 .wpforms-multiselect-checkbox-items [type="checkbox"] {
-	margin-top: 6px;
+	margin: 0;
 	padding: 0;
+	height: 16px;
+	width: 16px;
+}
+
+.wpforms-multiselect-checkbox-items [type="checkbox"]:checked::before {
+	height: 20px;
+	margin-block-start: -2px;
+	margin-inline-start: -4px;
+	width: 20px;
 }
 
 .wpforms-multiselect-checkbox-items [type="checkbox"]:checked + span {
@@ -239,4 +256,14 @@
 	line-height: 1;
 	min-width: 12px;
 	opacity: 0.75;
+}
+
+@media (max-width: 782px) {
+
+	.wpforms-multiselect-checkbox-form-outline {
+		font-size: 16px;
+		padding-inline-start: 8px;
+		line-height: 1.625;
+		min-height: 40px;
+	}
 }
