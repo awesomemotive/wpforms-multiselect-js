@@ -6,7 +6,9 @@
 	align-items: center;
 	display: inline-flex;
 	flex-wrap: wrap;
+	font-size: 14px;
 	gap: 10px;
+	line-height: 16.7px;
 	max-width: 100%;
 }
 
@@ -16,8 +18,8 @@
 }
 
 .wpforms-multiselect-checkbox-wrapper {
-	position: relative;
 	max-width: 100%;
+	position: relative;
 	width: 100%;
 }
 
@@ -27,21 +29,19 @@
 	border: 1px solid #8c8f94;
 	border-radius: 3px;
 	box-sizing: border-box;
-	color: #3c434a;
+	color: #32373c;
 	display: flex;
-	font-size: 14px;
 	height: 30px;
-	line-height: 17px;
 	min-width: 126px;
 	padding-block: 0;
-	padding-inline: 10px 25px;
+	padding-inline: 9px 27px;
 }
 
 .wpforms-multiselect-checkbox-form-outline:focus,
-.wpforms-multiselect-checkbox-form-outline:focus-within {
-	border-color: #2271b1;
-	box-shadow: 0 0 0 1px #2271b1;
-	color: #0a4b78;
+.wpforms-multiselect-checkbox-form-outline:focus-within,
+.wpforms-multiselect-checkbox-dropdown:focus-within .wpforms-multiselect-checkbox-form-outline {
+	border-color: #036aab;
+	box-shadow: 0 0 0 1px #036aab;
 }
 
 .wpforms-multiselect-checkbox-dropdown.has-clear .wpforms-multiselect-checkbox-form-outline {
@@ -68,9 +68,9 @@
 	box-sizing: border-box;
 	color: #50575e;
 	height: 8px;
+	inset-inline-end: 10px;
 	margin-top: -3px;
 	position: absolute;
-	inset-inline-end: 10px;
 	transform: rotate(45deg);
 	width: 8px;
 }
@@ -78,8 +78,8 @@
 .wpforms-multiselect-checkbox-clear {
 	cursor: pointer;
 	font-size: 16px;
-	position: absolute;
 	inset-inline-end: 25px;
+	position: absolute;
 	z-index: 2;
 }
 
@@ -115,26 +115,28 @@
 }
 
 .wpforms-multiselect-checkbox-input-placeholder {
+	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
-	overflow: hidden;
 }
 
 .wpforms-multiselect-checkbox-input:not(:placeholder-shown) + .wpforms-multiselect-checkbox-input-placeholder {
 	display: none;
 }
 
+
 /* Dropdown */
 .wpforms-multiselect-checkbox-list {
 	background: #fff;
 	border-radius: 6px;
 	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+	color: #50575e;
 	display: none;
 	inset-inline-start: 0;
-	margin-top: 9px;
+	margin-top: 6px;
 	max-width: 90vw;
 	min-width: 100%;
-	padding-block: 9px;
+	padding-block: 5px;
 	position: absolute;
 	text-align: start;
 	top: 100%;
@@ -169,12 +171,9 @@
 .wpforms-multiselect-checkbox-items {
 	display: flex;
 	flex-direction: column;
-	gap: 7px;
 	max-height: 350px;
 	overflow-y: auto;
-	padding-inline: 9px;
-	font-size: 13px;
-	line-height: 16px;
+	padding-inline: 10px;
 }
 
 .wpforms-multiselect-checkbox-items::-webkit-scrollbar {
@@ -189,8 +188,8 @@
 	align-items: flex-start;
 	cursor: pointer;
 	display: flex;
-	gap: 5px;
-	padding-block: 3px;
+	gap: 10px;
+	padding-block: 5px;
 }
 
 .wpforms-multiselect-checkbox-items label.disabled {
@@ -202,22 +201,31 @@
 }
 
 .wpforms-multiselect-checkbox-items [type="checkbox"] {
+	box-shadow: none;
+	height: 16px;
 	margin: 0;
 	padding: 0;
-	height: 16px;
+	position: relative;
 	width: 16px;
 }
 
-.wpforms-multiselect-checkbox-items [type="checkbox"]:checked::before {
-	height: 20px;
-	margin-block-start: -2px;
-	margin-inline-start: -4px;
-	width: 20px;
+.wpforms-multiselect-checkbox-items [type="checkbox"]:checked {
+	background-color: #056aab;
+	border-color: #056aab !important;
+	box-shadow: none !important;
 }
 
-.wpforms-multiselect-checkbox-items [type="checkbox"]:checked + span {
-	color: #e27730;
-	font-weight: 600;
+.wpforms-multiselect-checkbox-items [type="checkbox"]:checked::before {
+	-webkit-mask-image: url(data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2020%2020%27%3E%3Cpath%20d%3D%27M14.83%204.89l1.34.94-5.81%208.38H9.02L5.78%209.67l1.34-1.25%202.57%202.4z%27%20fill%3D%27%233582c4%27%2F%3E%3C%2Fsvg%3E);
+	background-color: #fff;
+	content: "";
+	height: 18px;
+	left: -2.5px;
+	margin: 0;
+	mask-image: url(data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2020%2020%27%3E%3Cpath%20d%3D%27M14.83%204.89l1.34.94-5.81%208.38H9.02L5.78%209.67l1.34-1.25%202.57%202.4z%27%20fill%3D%27%233582c4%27%2F%3E%3C%2Fsvg%3E);
+	position: absolute;
+	top: -1.5px;
+	width: 18px;
 }
 
 .wpforms-multiselect-checkbox-selected {
@@ -262,8 +270,7 @@
 
 	.wpforms-multiselect-checkbox-form-outline {
 		font-size: 16px;
-		padding-inline-start: 8px;
-		line-height: 1.625;
 		min-height: 40px;
+		padding-inline-start: 8px;
 	}
 }
