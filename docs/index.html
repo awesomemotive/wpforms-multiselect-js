@@ -60,12 +60,12 @@
 						</p>
 						<pre data-language="javascript">
 const dropdown = document.querySelector('.dropdown');
-const instance = new wpformsMultiSelectCheckbox(dropdown);
+const instance = new WPFormsMultiSelectCheckbox(dropdown);
 instance.init();
 </pre>
 						<p>Alternatively, you can use the following code by passing the DOM element ID:</p>
 						<pre data-language="javascript">
-const instance = new wpformsMultiSelectCheckbox('dropdown-id');
+const instance = new WPFormsMultiSelectCheckbox('dropdown-id');
 instance.init();
 </pre>
 						<div class="demo-box">
@@ -134,7 +134,7 @@ instance.init();
 						<h3>Clear Button</h3>
 						<p>Clear button will display a button that will allow to clear current selections.</p>
 						<pre data-language="javascript">
-const instance = new wpformsMultiSelectCheckbox('dropdown-id', {showClear:true});
+const instance = new WPFormsMultiSelectCheckbox('dropdown-id', {showClear:true});
 instance.init();
 </pre>
 						<div class="demo-box">
@@ -163,7 +163,7 @@ instance.init();
 							you select all options, the placeholder text will be <strong>All</strong>.
 						</p>
 						<pre data-language="javascript">
-const instance = new wpformsMultiSelectCheckbox('dropdown-id', {showMask:true});
+const instance = new WPFormsMultiSelectCheckbox('dropdown-id', {showMask:true});
 instance.init();
 </pre>
 						<div class="demo-box">
@@ -198,7 +198,7 @@ instance.init();
 							number of selected options. It will be replaced with the actual count.
 						</p>
 						<pre data-language="javascript">
-const instance = new wpformsMultiSelectCheckbox(
+const instance = new WPFormsMultiSelectCheckbox(
   'dropdown-id',
   {
    showMask:true,
@@ -230,7 +230,7 @@ instance.init();
 						<h3>Search Enabled</h3>
 						<p>Search will display a search input that will allow to filter the options.</p>
 						<pre data-language="javascript">
-const instance = new wpformsMultiSelectCheckbox('dropdown-id', {showSearch:true});
+const instance = new WPFormsMultiSelectCheckbox('dropdown-id', {showSearch:true});
 instance.init();
 </pre>
 						<div class="demo-box">
@@ -267,7 +267,7 @@ instance.init();
 							<strong>top</strong>, <strong>bottom</strong>, <strong>left</strong>, <strong>right</strong>
 						</p>
 						<pre data-language="javascript">
-const instance = new wpformsMultiSelectCheckbox('dropdown-id', {showTags:true});
+const instance = new WPFormsMultiSelectCheckbox('dropdown-id', {showTags:true});
 instance.init();
 </pre>
 						<div class="demo-box">
@@ -423,6 +423,13 @@ instance.update(dropdown, valuesToSet);
 									<tr>
 										<td>showSearch</td>
 										<td>Display a search input that will allow to filter the options.</td>
+										<td>
+											<pre data-language="javascript">false</pre>
+										</td>
+									</tr>
+									<tr>
+										<td>showMask</td>
+										<td>Display a placeholder text depending on the selected options.</td>
 										<td>
 											<pre data-language="javascript">false</pre>
 										</td>
