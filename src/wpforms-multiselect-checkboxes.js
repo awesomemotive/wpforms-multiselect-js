@@ -348,10 +348,21 @@
 		} );
 		this.list.appendChild( items );
 
+		let lastOptgroup = null;
+
 		const checkboxes = Array.from( element.options ).map( ( option ) => {
 			const label = document.createElement( 'label' );
 			const text = document.createElement( 'span' );
 			const checkbox = document.createElement( 'input' );
+			const optgroup = option.parentNode.tagName === 'OPTGROUP' ? option.parentNode.label : null;
+
+			if ( optgroup && optgroup !== lastOptgroup ) {
+				const optgroupLabel = document.createElement( 'h3' );
+				optgroupLabel.classList.add( 'wpforms-multiselect-checkbox-optgroup' );
+				optgroupLabel.textContent = optgroup;
+				items.appendChild( optgroupLabel );
+				lastOptgroup = optgroup;
+			}
 
 			text.textContent = option.textContent;
 
