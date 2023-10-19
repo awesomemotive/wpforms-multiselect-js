@@ -34,6 +34,8 @@
 			// Default delimiter for the input value.
 			// This is an undocumented option which might not often be used, but it's here for convenience.
 			delimiter: ', ',
+			// Default custom opener. User can specify here custom CSS selector for the element which will open the dropdown.
+			customOpener: null,
 		};
 
 		// Default i18n strings.
@@ -547,6 +549,11 @@
 				return; // Exit early if the target is within the wrapper and forceClose is false.
 			}
 
+			// If custom opener is clicked, do not close the dropdown.
+			if ( this.settings.customOpener && document.querySelector( this.settings.customOpener )?.contains( target ) ) {
+				return;
+			}
+
 			maybeFlushSearchInput();
 			this.list.classList.remove( 'open', 'open-up' );
 			this.input.setAttribute( 'aria-expanded', false );
@@ -567,6 +574,12 @@
 		this.input.addEventListener( 'keydown', handleInputFocus );
 		this.list.addEventListener( 'change', handleCheckboxChange );
 		document.addEventListener( 'click', handleDocumentClick );
+
+		if ( this.settings.customOpener ) {
+			document.querySelectorAll( this.settings.customOpener )?.forEach( ( opener ) => {
+				opener.addEventListener( 'click', handleInputClick );
+			} );
+		}
 
 		// Bind event listeners for selected options, if enabled.
 		if ( this.selectedOptionsContainer ) {
