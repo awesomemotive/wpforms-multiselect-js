@@ -472,7 +472,7 @@
 		const handleInputClick = ( { target: input } ) => {
 			const isOpen = this.list.classList.toggle( 'open' );
 			input.setAttribute( 'aria-expanded', isOpen );
-			dispatchOpenEvent( isOpen );
+			dispatchToggleEvent( isOpen );
 
 			if ( ! isOpen ) {
 				maybeFlushSearchInput();
@@ -551,7 +551,7 @@
 			maybeFlushSearchInput();
 			this.list.classList.remove( 'open', 'open-up' );
 			this.input.setAttribute( 'aria-expanded', false );
-			dispatchOpenEvent( false );
+			dispatchToggleEvent( false );
 		};
 
 		// Callback function to flush the search input.
@@ -565,12 +565,12 @@
 		};
 
 		// Dispatch a custom event to indicate whether the dropdown is open or not.
-		const dispatchOpenEvent = ( isOpen ) => {
-			const openEvent = new CustomEvent( 'wpforms_multiselect_js_list_toggle', {
+		const dispatchToggleEvent = ( isOpen ) => {
+			const toggleEvent = new CustomEvent( 'wpforms_multiselect_checkbox_list_toggle', {
 				bubbles: true,
 				detail: { isOpen },
 			} );
-			element.dispatchEvent( openEvent );
+			element.dispatchEvent( toggleEvent );
 		};
 
 		// Bind event listeners.
