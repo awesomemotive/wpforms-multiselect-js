@@ -34,7 +34,7 @@
 			// Default delimiter for the input value.
 			// This is an undocumented option which might not often be used, but it's here for convenience.
 			delimiter: ', ',
-			// Default custom opener. User can specify here custom CSS selector for the element which will open the dropdown.
+			// Default custom opener. User can pass a custom element to open the dropdown.
 			customOpener: null,
 		};
 
@@ -550,7 +550,7 @@
 			}
 
 			// If custom opener is clicked, do not close the dropdown.
-			if ( this.settings.customOpener && document.querySelector( this.settings.customOpener )?.contains( target ) ) {
+			if ( this.settings.customOpener && this.settings.customOpener?.contains( target ) ) {
 				return;
 			}
 
@@ -576,9 +576,7 @@
 		document.addEventListener( 'click', handleDocumentClick );
 
 		if ( this.settings.customOpener ) {
-			document.querySelectorAll( this.settings.customOpener )?.forEach( ( opener ) => {
-				opener.addEventListener( 'click', handleInputClick );
-			} );
+			this.settings.customOpener.addEventListener( 'click', handleInputClick );
 		}
 
 		// Bind event listeners for selected options, if enabled.
