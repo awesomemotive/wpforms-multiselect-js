@@ -184,7 +184,7 @@
 }
 
 .wpforms-multiselect-checkbox-items .wpforms-multiselect-checkbox-optgroup {
-	color: #8C8F94;
+	color: #8c8f94;
 	font-weight: 600;
 	font-size: 14px;
 	line-height: 19px;
@@ -195,7 +195,7 @@
 	user-select: none;
 }
 
-.wpforms-multiselect-checkbox-items .wpforms-multiselect-checkbox-optgroup:first-of-type{
+.wpforms-multiselect-checkbox-items .wpforms-multiselect-checkbox-optgroup:first-of-type {
 	border-top: none;
 	padding-top: 0;
 }
