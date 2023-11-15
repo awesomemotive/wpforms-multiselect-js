@@ -131,6 +131,40 @@ instance.init();
 
 				<div class="row">
 					<article>
+						<h3>Grouped options</h3>
+						<p>
+							You can group options by using the <strong>optgroup</strong> element. Simply wrap the
+							options you want to group in the <strong>optgroup</strong> element and provide a label
+							attribute to it. For example, you can use the following code:
+						</p>
+						<pre data-language="html">
+<select multiple="true">
+  <optgroup label="Group 1">
+    <option value="Option 1">Option 1</option>
+    <option value="Option 2">Option 2</option>
+  </optgroup>
+  <optgroup label="Group 2">
+    <option value="Option 3">Option 3</option>
+    <option value="Option 4">Option 4</option>
+  </optgroup>
+</select>
+						</pre>
+						<div class="demo-box">
+							<select class="dropdown" multiple placeholder="Grouped options field">
+								<optgroup label="Group 1">
+									<option value="Option 1">Option 1</option>
+									<option value="Option 2">Option 2</option>
+								</optgroup>
+								<optgroup label="Group 2">
+									<option value="Option 3">Option 3</option>
+									<option value="Option 4">Option 4</option>
+								</optgroup>
+							</select>
+						</div>
+				</div>
+
+				<div class="row">
+					<article>
 						<h3>Clear Button</h3>
 						<p>Clear button will display a button that will allow to clear current selections.</p>
 						<pre data-language="javascript">

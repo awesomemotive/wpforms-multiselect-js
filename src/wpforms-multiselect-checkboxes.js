@@ -357,7 +357,7 @@
 			const optgroup = option.parentNode.tagName === 'OPTGROUP' ? option.parentNode.label : null;
 
 			if ( optgroup && optgroup !== lastOptgroup ) {
-				const optgroupLabel = document.createElement( 'h3' );
+				const optgroupLabel = document.createElement( 'span' );
 				optgroupLabel.classList.add( 'wpforms-multiselect-checkbox-optgroup' );
 				optgroupLabel.textContent = optgroup;
 				items.appendChild( optgroupLabel );

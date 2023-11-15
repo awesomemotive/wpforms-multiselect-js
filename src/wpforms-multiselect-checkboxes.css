@@ -173,7 +173,6 @@
 	flex-direction: column;
 	max-height: 350px;
 	overflow-y: auto;
-	padding-inline: 10px;
 }
 
 .wpforms-multiselect-checkbox-items::-webkit-scrollbar {
@@ -184,12 +183,30 @@
 	background-color: #8c8f94;
 }
 
+.wpforms-multiselect-checkbox-items .wpforms-multiselect-checkbox-optgroup {
+	color: #8C8F94;
+	font-weight: 600;
+	font-size: 14px;
+	line-height: 19px;
+	padding: 0 0 0 10px;
+	margin: 9px 0;
+	border-top: 1px solid #dcdcde;
+	padding-top: 10px;
+	user-select: none;
+}
+
+.wpforms-multiselect-checkbox-items .wpforms-multiselect-checkbox-optgroup:first-of-type{
+	border-top: none;
+	padding-top: 0;
+}
+
 .wpforms-multiselect-checkbox-items label {
 	align-items: flex-start;
 	cursor: pointer;
 	display: flex;
 	gap: 10px;
 	padding-block: 5px;
+	margin: 0 10px;
 }
 
 .wpforms-multiselect-checkbox-items label.disabled {
