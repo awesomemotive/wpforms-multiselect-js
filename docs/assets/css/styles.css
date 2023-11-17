@@ -310,6 +310,21 @@ article h3 {
 	background-color: #f6f7f7;
 }
 
+.custom-opener-wrap {
+	margin-bottom: 10px;
+	vertical-align: middle;
+}
+
+.custom-opener {
+	background-color: #fff;
+	border: 1px solid #ccd0d4;
+	border-radius: 4px;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+	color: #2c3338;
+	cursor: pointer;
+	padding: 8px 10px;
+}
+
 
 /**
  * Footer

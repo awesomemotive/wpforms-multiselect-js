@@ -240,7 +240,6 @@ instance.init();
 								placeholder="Search for different fruits"
 								data-settings='{"showSearch":true,"showClear":true}'
 							>
-								// Create 10 items with emoji friuts
 								<option value="Apple">🍎 Apple</option>
 								<option value="Banana">🍌 Banana</option>
 								<option value="Grapes">🍇 Grapes</option>
@@ -254,6 +253,37 @@ instance.init();
 							</select>
 						</div>
 					</article>
+				</div>
+
+				<div class="row">
+					<article>
+						<h3>Custom opener</h3>
+						<p>
+							You can use the <strong>customOpener</strong> setting to provide a custom opener element.
+						</p>
+						<pre data-language="javascript">
+const opener = document.querySelector('.opener');
+const instance = new WPFormsMultiSelectCheckbox('dropdown-id', {customOpener:opener});
+instance.init();
+						</pre>
+						<div class="demo-box">
+							<div class="custom-opener-wrap">
+								<button class="custom-opener">Open dropdown</button>
+							</div>
+							<select class="dropdown-with-custom-opener"
+								multiple placeholder="Select your favorite colors"
+								>
+								<option value="Red">🟥 Red</option>
+								<option value="Orange">🟧 Orange</option>
+								<option value="Yellow">🟨 Yellow</option>
+								<option value="Green">🟩 Green</option>
+								<option value="Blue">🟦 Blue</option>
+								<option value="Purple">🟪 Purple</option>
+								<option value="Brown">🟫 Brown</option>
+								<option value="Black">⬛ Black</option>
+								<option value="White">⬜ White</option>
+							</select>
+						</div>
 				</div>
 
 				<div class="row">
