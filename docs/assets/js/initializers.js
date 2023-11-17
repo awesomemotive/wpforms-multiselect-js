@@ -4,6 +4,8 @@
 // Call the initialization function when the DOM is ready
 function initializeDropdownCheckboxes() {
 	const dropdowns = document.querySelectorAll( '.dropdown' );
+	const dropDownWithCustomOpener = document.querySelector( '.dropdown-with-custom-opener' );
+	const customOpener = document.querySelector( '.custom-opener' );
 
 	dropdowns.forEach( ( dropdown ) => {
 		const multiSelectCheckbox = new WPFormsMultiSelectCheckbox( dropdown );
@@ -29,6 +31,17 @@ function initializeDropdownCheckboxes() {
 			multiSelectCheckbox.update( dropdown, valuesToSet );
 		}
 	} );
+
+	// Example of how to set a custom opener
+	if ( dropDownWithCustomOpener ) {
+		const multiSelectCheckbox = new WPFormsMultiSelectCheckbox(
+			dropDownWithCustomOpener,
+			{
+				customOpener,
+			}
+		);
+		multiSelectCheckbox.init();
+	}
 }
 
 document.addEventListener( 'DOMContentLoaded', initializeDropdownCheckboxes );
